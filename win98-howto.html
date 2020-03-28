@@ -1,0 +1,35 @@
+<!doctype html public "-//W3C//DTD HTML 3.2 //EN">
+<html>
+<head>
+<title>HowTo - use tkbibtex under Windows 98</title>
+<meta name="author" content="Peter">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000FF" alink="#FF0000" vlink="#FF0000">
+<h1>HowTo - use tkbibtex under Windows 98</h1>
+<p>This may apply to other Windows variants as well</p>
+<ul>
+<li>install Tcl/Tk on your system</li>
+<li>install tkbibtex on your system with a filename of tkbibtex.tcl</li>
+<li>fire up a File browser</li>
+<li>select View|Folder Options </li>
+<li>select File Types tab</li>
+<li>select New Type</li>
+<li>Description of type := BibTex database</li>
+<li>Associated extension := BIB</li>
+<li>select New ...</li>
+<li>Action := open</li>
+<li>Application used to perform action :=
+	"c:\Program Files\Tcl\bin\wish83.exe" "c:\bin\tkbibtex.tcl" "%1"
+	
+(note the quotes are required, adjust the paths to suit your installation)
+			</li>
+</ul>
+<p>
+Now you should just be able to double-click on a bibfile and tkbibtex
+will be invoked on it.
+There is no icon yet, anybody feeling artistic?
+</p>
+
+Page by <a href="mailto:pic@cat.csiro.au">Peter Corke</a>. Last Modified: July 20 2000
+</body>
+</html>

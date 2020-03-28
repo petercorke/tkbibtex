@@ -1,0 +1,70 @@
+<!doctype html public "-//W3C//DTD HTML 3.2 //EN">
+<html>
+<head>
+<title>HowTo - use tkbibtex under Windows NT</title>
+<meta name="author" content="Peter">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000FF" alink="#FF0000" vlink="#FF0000">
+<h1>HowTo - use tkbibtex under Windows NT</h1>
+<hr size="2">
+
+<h2>Settings</h2>
+<p>After a little confusion I now run <b>tkbibtex</b> successfully on Windows NT 4.0 SP5. Both Tcl/Tk and tkbibtex are installed in separate network folders on our server. Users have read-only access to these folders. Tcl/Tk is version 8.3.0, tkbibtex is version 7.</p>
+
+<h3>Ways it didn't work</h3>
+<p>Somehow you got to open tkbibtex with a bib file. Trying to open tkbibtex first and open the bib file from there won't work (although this is what happens when you try to assign the bib file type in Explorer). So the following attempts are not successful:</p>
+<ul>
+    <li>Opening wish and trying to open the source tkbibtex.tcl</li>
+    <li>Trying to start tkbibtex.tcl alone from the command prompt using tclsh83</li>
+    <li>Trying to start tkbibtex.tcl alone from the command prompt using wish83</li>
+</ul>
+
+<h2>Requirements</h2>
+<ul>
+<li><a href="http://www.cat.csiro.au/cmst/staff/pic/tkbibtex.html">tkbibtex</a></li><br>
+    rename it to tkbibtex.tcl after downloading
+<li><a href="http://dev.scriptics.com/software/tcltk">Tcl/Tk</a></li>
+</ul>
+
+<h2>Get it to run</h2>
+<p>Install Tcl/Tk in the directory of your liking. The same is true for tkbibtex.</p>
+
+<h3>Running it through a batch file</h3>
+<p>This is my favourite method as it works and Explorer doesn't have to handle yet another extension.</p>
+
+<p>Create a batch file for every bib file (not a big deal indeed as long as Tcl/Tk and tkbibtex stay in their folders). Give it the same name and place it in the same folder as the bib file, so in Explorer it resides at the side of the bib file. A doubleclick on the batch file and your bib file opens in tkbibtex.</p>
+
+<pre>
+--- 8< --- cut here ---
+
+rem +-------------------------------------------------------------+
+rem | foo.bat - sample batch file for opening foo.bib in tkbibtex |
+rem +-------------------------------------------------------------+
+
+path_to_wish\wish83 path_to_tkbibtex\tkbibtex.tcl foo.bib
+
+--- 8< --- cut here ---
+</pre>
+
+<h3>Running it through Explorer</h3>
+<p>As I'm running a german version of WinNT not all names of dialogs and fields may be correct. Feel free to tell me their real (english) names.</p>
+<p>Another option is to define the file extension .bib in Explorer. To do this open Explorer, click on View | Options | File Types and check if there is something defined for .bib files (we don't want to mess around). If there is no entry click on "New Type" and enter the following values:</p>
+<ul>
+    <li>Description: BiBTeX Document</li>
+    <li>Mime Type: none (leave the field empty)</li>
+    <li>Actions:</li><br>
+    First create a new entry (click on "New")
+    <ul>
+        <li>Name: open </li>
+        <li>Executable for this ...: path_to_wish\wish83.exe path_to_tkbibtex\tkbibtex.tcl "%1"</li><br>
+            This calls wish with tkbibtex.tcl and the file name as parameters
+    </ul>
+    <li>click "Ok"</li>
+    <li>click "Ok"</li>
+</ul>
+<p>Now you can doubleclick on you bib file in Explorer and <b>tkbibtex</b> will open. Unluckily the bib file is not opened with tkbibtex. Seemingly the file name gets lost on its way to wish. If somebody comes up with a smarter method of doing this please let me know.</p>
+
+<hr size="2">
+Page by <a href="mailto:Peter.Lippert@gmx.de">Peter Lippert</a>. Last Modified: Apr 20 2000
+</body>
+</html>

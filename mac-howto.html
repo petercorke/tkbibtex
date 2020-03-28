@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+ <html>
+<head>
+<title>HowTo - use tkbibtex under MacOS</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000FF" alink="#FF0000" vlink="#FF0000">
+<h1>HowTo - use tkbibtex under MacOS</h1>
+<p>The following has been successfully done under MacOS 9.0.4 (german 
+version). It should run under other version, though (what about
+MacOS X?).</p>
+<ul>
+<li>Install Tcl/Tk. You will find it
+<a href="http://dev.scriptics.com/software/tcltk/downloadnow83.html">here</a>.
+Please note that I have only tested the complete
+<a 
+href="http://dev.scriptics.com/download/tcl/mac/TclTk_8_3_2p1_RtimeInstall.bin"> binary
+installer</a>.</li>
+<li>Download tkbibtex and save it with a filename of tkbibtex.tcl (or 
+whatever).</li>
+<li>Drag and drop this file onto the alias "Drag & Drop Tclets" in the 
+Tcl/Tk folder. If you use Tcl/Tk for the first time, you will be asked to locate 
+the "Wish" application which can be found in the "Build" subfolder.</li>
+<li>You will then be asked to name and save your Tcl application. Just do 
+so!</li>
+<li>Start the newly created application as any other one using all the 
+comfort the MacOS provides you with (exception see below).</li>
+</ul>
+<p>That's all!</p>
+<hr>
+<h2>Limitations and problems</h2>
+Some limitations and problems I encountered (plus one wish):
+<ul>
+<li>I had some problems when installing Tcl/Tk on another than the 
+system hard drive: after a restart of the computer, Tcl-scripts would not 
+run because the scripting engine was not found any more (??).
+With the standard installation on the system hard drive, everything runs just fine.</li>
+<li>Although you can drag and drop any bib-file onto the newly created 
+application, the bib-file is not opened automatically. You have to use the 
+open dialog in the file menu.</li>
+<li>Being no Tcl expert, I could not figure out how to bind the standard 
+MacOS keys to the objects in the file menu (Open, Save, etc.). Modifying 
+the corresponding line in the tkbibtex source code just did not do the job!</li>
+</ul>
+
+<hr>
+<small>Page by <a href="mailto:fraenken@upb.de">Dietrich Fraenken</a>. Last Modified: 
+March 28 2001</small>
+</body>
+</html>
+
