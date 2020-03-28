@@ -1,13 +1,12 @@
-.TKBIBTEX (17 March 2000) 
-- portable BibTeX editor and browser
+# TKBIBTEX - portable BibTeX editor and browser
 
-# SYNOPSIS
+## SYNOPSIS
 
 ```
 tkbibtex [bibfile]
 ```
 
-# DESCRIPTION
+## DESCRIPTION
 
 `tkbibtex`
 is a portable editor and browser for BibTeX format file.  It is written in
@@ -44,7 +43,7 @@ A list of matching cite keys is listed in this window, and once again
 double clicking or up/down arrow keys can be used to browse this list using
 the browser window.
 
-# Features
+## Features
 The following are features I think are particularly cute.
 
 * In the browser window you can right-click in a field and it will bring up
@@ -112,19 +111,19 @@ with Foo before 1997, we could use the command line
 % tkbibtex -count -ye 1997 -field author -search Foo   publist.bib
 ```
 
-#FILES
+##FILES
 At startup a file called `.tkbibtexrc`
 in the user's home directory is sourced if it exists.
 
-# ENVIRONMENT
+## ENVIRONMENT
 `BIBPATH`
 is a colon separated list of directories which will be searched for named
 bib files.
 
-# SEE ALSO
+## SEE ALSO
 `bibtex`, `latex`, `tcl`, `tk`
 
-# BUGS
+## BUGS
 The parser for the bibtex file format is simple minded and expects each
 record to occupy a single line, ending with a `}` or `},`.  The last line
 of each group must be a close brace on a line by itself.
@@ -132,5 +131,5 @@ This means that old, existing, bib files may need some manual editing
 before they will work with tkbibtex.
 
 # AUTHOR
-P.I. Corke (peter.i.corke@gmail.com)
+P.I. Corke (peter.i.corke@gmail.com) (17 March 2000)
 
